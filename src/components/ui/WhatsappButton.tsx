@@ -1,10 +1,10 @@
-import React from 'react';
+import * as React from 'react';
 import { motion } from 'framer-motion';
 
 const WhatsappButton: React.FC = () => {
   return (
     <motion.a
-      href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20AutoNegócio.AI"
+      href="https://wa.me/5561984272473?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20AutoNegócio.AI"
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-40 flex items-center justify-center bg-green-500 text-white rounded-full p-4 shadow-lg hover:bg-green-600 transition-colors duration-300"

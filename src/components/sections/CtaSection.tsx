@@ -115,29 +115,29 @@ const CtaSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-secondary relative" id="contato">
+    <section className="py-10 md:py-16 lg:py-20 bg-secondary relative" id="contato">
       {/* Background elements */}
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary/5 rounded-full filter blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-primary/5 rounded-full filter blur-3xl"></div>
       
-      <div className="container mx-auto relative z-10">
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div 
           ref={ref}
-          className="text-center mb-12"
+          className="text-center mb-6 md:mb-8 lg:mb-10"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Comece Hoje Mesmo - Sem Riscos</h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-3">Comece Hoje Mesmo - Sem Riscos</h2>
+          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
             Dê o primeiro passo para transformar sua presença digital e atrair mais pacientes
           </p>
         </motion.div>
 
         {/* FAQ Section */}
-        <div className="max-w-3xl mx-auto mb-16">
-          <h3 className="text-2xl font-bold text-center mb-8">Perguntas Frequentes</h3>
-          <div className="space-y-6">
+        <div className="max-w-3xl mx-auto mb-6 md:mb-10 lg:mb-12">
+          <h3 className="text-xl md:text-2xl font-bold text-center mb-4 md:mb-6 lg:mb-8">Perguntas Frequentes</h3>
+          <div className="space-y-3 md:space-y-4 lg:space-y-5">
             {[
               {
                 question: "Quanto tempo leva para ver resultados?",
@@ -170,7 +170,7 @@ const CtaSection: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-12">
+        <div className="flex flex-col lg:flex-row gap-4 md:gap-6 lg:gap-8">
           <motion.div 
             className="lg:w-1/2"
             initial={{ opacity: 0, x: -30 }}

@@ -15,20 +15,20 @@ const TestimonialsSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-gray-900/30" id="resultados">
-      <div className="container mx-auto">
+    <section className="py-10 md:py-16 lg:py-20 bg-gray-900/30" id="resultados">
+      <div className="container mx-auto px-4">
         <motion.div 
           ref={ref}
-          className="text-center mb-16"
+          className="text-center mb-6 md:mb-10 lg:mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Resultados Reais de Profissionais como Você</h2>
-          <div className="w-20 h-1 bg-primary mx-auto mt-6"></div>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">Resultados Reais de Profissionais como Você</h2>
+          <div className="w-16 md:w-20 h-1 bg-primary mx-auto mt-3 md:mt-4"></div>
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row gap-8 mb-16">
+        <div className="flex flex-col lg:flex-row gap-4 md:gap-6 lg:gap-8 mb-6 md:mb-10 lg:mb-12">
           <motion.div 
             className="lg:w-1/2"
             initial={{ opacity: 0, x: -30 }}
@@ -140,8 +140,8 @@ const TestimonialsSection: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-center"
         >
-          <p className="text-lg mb-6">Algumas das especialidades que atendemos:</p>
-          <div className="flex flex-wrap justify-center gap-3">
+          <p className="text-lg mb-3 md:mb-4 lg:mb-5">Algumas das especialidades que atendemos:</p>
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3">
             {specialties.map((specialty, index) => (
               <motion.span
                 key={specialty}
