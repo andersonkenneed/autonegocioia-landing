@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 
@@ -28,24 +28,24 @@ const ExitPopup: React.FC<ExitPopupProps> = ({ isOpen, onClose }) => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ type: "spring", duration: 0.4 }}
-            className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-secondary border border-gray-700 rounded-xl p-8 z-50 max-w-md w-full shadow-2xl"
+            className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-secondary border border-gray-700 rounded-xl p-6 sm:p-8 z-50 max-w-md w-[90%] sm:w-full mx-auto shadow-2xl"
           >
             <button 
               onClick={onClose}
-              className="absolute top-3 right-3 text-gray-400 hover:text-white"
+              className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors duration-200"
             >
-              <X />
+              <X className="w-5 h-5" />
             </button>
             
             <div className="text-center mb-6">
-              <h3 className="text-2xl font-bold mb-2">Espere!</h3>
-              <p className="text-gray-300">
+              <h3 className="text-xl sm:text-2xl font-bold mb-3">Espere!</h3>
+              <p className="text-gray-300 text-sm sm:text-base">
                 Antes de sair, que tal um diagnóstico gratuito do seu marketing digital?
               </p>
             </div>
             
             <div className="bg-primary/10 p-4 rounded-lg mb-6">
-              <p className="text-center">
+              <p className="text-center text-sm sm:text-base">
                 <span className="text-primary font-bold">87%</span> dos profissionais de saúde 
                 desperdiçam dinheiro em marketing que não traz resultados
               </p>
@@ -53,20 +53,29 @@ const ExitPopup: React.FC<ExitPopupProps> = ({ isOpen, onClose }) => {
             
             <div className="space-y-4">
               <a 
-                href="#contato" 
+                href="#formulario" 
                 onClick={(e) => {
                   e.preventDefault();
                   onClose();
-                  document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' });
+                  const element = document.getElementById('formulario');
+                  if (element) {
+                    const headerOffset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 88;
+                    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = elementPosition - headerOffset - 24;
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: 'smooth'
+                    });
+                  }
                 }}
-                className="block w-full btn btn-primary text-center"
+                className="block w-full btn btn-primary py-3 text-center text-sm sm:text-base font-bold tracking-wide"
               >
                 Quero Meu Diagnóstico Gratuito
               </a>
               
               <button 
                 onClick={onClose}
-                className="block w-full text-center text-gray-400 hover:text-white"
+                className="block w-full text-center text-sm sm:text-base text-gray-400 hover:text-white transition-colors duration-200"
               >
                 Não, obrigado
               </button>
