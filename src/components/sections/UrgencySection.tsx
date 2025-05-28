@@ -111,8 +111,21 @@ const UrgencySection: React.FC = () => {
             </div>
             
             <a 
-              href="#contato" 
-              className="w-full md:w-auto btn btn-primary flex items-center justify-center group text-base md:text-lg px-6 md:px-12 py-4 md:py-5 transform hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(60,223,255,0.3)] hover:shadow-[0_0_30px_rgba(60,223,255,0.5)]"
+              href="#formulario" 
+              className="btn btn-primary text-lg px-12 py-5 transform hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(60,223,255,0.3)] hover:shadow-[0_0_30px_rgba(60,223,255,0.5)]"
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.getElementById('formulario');
+                if (element) {
+                  const headerOffset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 88;
+                  const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                  const offsetPosition = elementPosition - headerOffset - 24;
+                  window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                  });
+                }
+              }}
             >
               <span className="font-bold tracking-wide">Garantir Minha Vaga</span>
             </a>

@@ -3,7 +3,7 @@ import Logo from '../ui/Logo';
 
 const Hero: React.FC = () => {
   return (
-    <section className="min-h-screen pt-16 md:pt-24 pb-6 md:pb-12 relative overflow-hidden">
+    <section className="min-h-screen pt-28 md:pt-32 pb-6 md:pb-12 relative overflow-hidden">
       <div className="absolute inset-0 bg-hero-pattern opacity-70 z-0">
         {/* Overlay gradiente para melhor contraste */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-secondary/90"></div>
@@ -28,8 +28,21 @@ const Hero: React.FC = () => {
           </p>
           
           <a 
-            href="#contato" 
+            href="#formulario" 
             className="btn btn-primary text-lg px-12 py-5 transform hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(60,223,255,0.3)] hover:shadow-[0_0_30px_rgba(60,223,255,0.5)]"
+            onClick={(e) => {
+              e.preventDefault();
+              const element = document.getElementById('formulario');
+              if (element) {
+                const headerOffset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 88;
+                const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - headerOffset - 24;
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: 'smooth'
+                });
+              }
+            }}
           >
             <span className="font-bold tracking-wide flex items-center">
               Quero Mais Pacientes

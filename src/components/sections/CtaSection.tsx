@@ -170,7 +170,7 @@ const CtaSection: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-4 md:gap-6 lg:gap-8">
+        <div className="flex flex-col lg:flex-row gap-4 md:gap-6 lg:gap-8" id="formulario">
           <motion.div 
             className="lg:w-1/2"
             initial={{ opacity: 0, x: -30 }}
@@ -207,7 +207,11 @@ const CtaSection: React.FC = () => {
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
             transition={{ duration: 0.7, delay: 0.5 }}
           >
-            <form onSubmit={handleSubmit} className="bg-gray-800/30 border border-gray-700 p-8 rounded-2xl">
+            <form 
+              onSubmit={handleSubmit}
+              className="bg-gray-800/30 border border-gray-700 p-8 rounded-2xl"
+              style={{ scrollMarginTop: 'calc(var(--header-height) + 24px)' }}
+            >
               <h3 className="text-xl font-bold mb-6">Solicite seu diagnóstico gratuito:</h3>
               
               {showSuccess && (
