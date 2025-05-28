@@ -1,0 +1,21 @@
+{
+  "name": "AutoNegócio.AI - Marketing Digital para Médicos",
+  "short_name": "AutoNegócio.AI",
+  "description": "Marketing digital especializado para profissionais de saúde com IA",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+} 

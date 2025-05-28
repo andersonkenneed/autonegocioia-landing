@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;500;600&family=Roboto:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #3CDFFF;
+  --secondary: #000B20;
+  --white: #FFFFFF;
+  --gray: #404B5A;
+  --success: #00E57A;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-secondary text-white font-roboto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-montserrat font-bold;
+}
+
+.highlight {
+  @apply font-poppins font-medium;
+}
+
+.container {
+  @apply px-4 sm:px-6 mx-auto max-w-7xl;
+}
+
+.btn {
+  @apply py-3 px-6 rounded-lg font-medium transition-all duration-300 inline-block text-center;
+}
+
+.btn-primary {
+  @apply bg-primary text-secondary font-bold hover:bg-opacity-90 shadow-lg shadow-primary/20;
+}
+
+.btn-outline {
+  @apply border-2 border-primary text-primary hover:bg-primary hover:text-secondary;
+}
+
+.card {
+  @apply bg-gray-800 bg-opacity-30 backdrop-blur-sm rounded-xl p-6 border border-gray-700;
+}
+
+.glow {
+  text-shadow: 0 0 5px theme('colors.primary.DEFAULT'), 0 0 10px theme('colors.primary.DEFAULT');
+}
+
+.glow-box {
+  box-shadow: 0 0 15px theme('colors.primary.DEFAULT');
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@layer components {
+  .progress-bar {
+    @apply fixed top-0 left-0 right-0 h-1 bg-primary z-50;
+  }
+}
